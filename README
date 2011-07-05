@@ -1,0 +1,10 @@
+Screen scraper for Craigslist.
+
+Written By Tyler Breland. 
+
+Usage for linux/os x:
+
+cd cuttlefish
+chmod -x scrape.rb
+./scrape.rb
+
