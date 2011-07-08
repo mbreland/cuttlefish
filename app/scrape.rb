@@ -36,10 +36,10 @@ class Scrape
             #open with nokogiri
             sdoc = Nokogiri::HTML(open(scrape_url)).at_css("blockquote")
             @@pages << sdoc
-          rescue OpenURI::HTTPError 
-            puts "404"
-          rescue RuntimeError
-            puts "runtime error"
+          rescue OpenURI::HTTPError => error
+            puts error.message
+          rescue RuntimeError => error
+            puts error
           end 
         }
       progress (((index + 1).to_f / @@links.length)*100).to_i

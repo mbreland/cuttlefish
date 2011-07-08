@@ -48,4 +48,4 @@ class Search
   end
 end
 
-Search.new('cpg','rails', 'cl', 'full')
+Search.new('cpg','rails', 'cl', 'concise')
