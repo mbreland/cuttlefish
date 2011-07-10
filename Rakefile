@@ -2,6 +2,12 @@ require File.expand_path('../app/search.rb', __FILE__)
 require 'app/scrape'
 require 'app/display'
 
+desc "Clear out all files in ./tmp directory"
+task :clean do
+  generated_files = FileList['./tmp/*.html']
+  generated_files.each { |file| File.delete(file) }
+end
+
 speeds = {"all" => "full", "most" => "concise"}
 types = {"gigs" => "ggg", "jobs" => "jjj", "housing" => "hhh", "for_sale" => "sss", "services" => "bbb", "community" => "ccc"}
 

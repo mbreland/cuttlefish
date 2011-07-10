@@ -2,7 +2,7 @@ class Display
   attr_accessor :out_file, :postings
   
   def initialize(postings, gig, search) 
-    @out_file = "./public/cuttlefish.html"
+    @out_file = "./tmp/results.html"
     @postings = postings
     if File.exists?(@out_file)  
       File.delete(@out_file)
@@ -14,11 +14,11 @@ class Display
   end
   
   def format_postings
-    @poops = [] 
+    @results = [] 
     @postings.each do |link|
       number = link[0].to_s.scan(/\d+/)
       format_date = number.to_s.to_i < 10 ? link[0].to_s + "&nbsp;" : link[0]
-      @poops << " #{format_date} - #{link[1]} - #{link[2]}</br></br>"
+      @results << " #{format_date} - #{link[1]} - #{link[2]}</br></br>"
     end
   end
   
