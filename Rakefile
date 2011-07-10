@@ -2,10 +2,13 @@ require File.expand_path('../app/search.rb', __FILE__)
 require 'app/scrape'
 require 'app/display'
 
-desc "Clear out all files in ./tmp directory"
+desc "Clear out all files in ./tmp directory and destroy Gemfile.lock"
 task :clean do
   generated_files = FileList['./tmp/*.html']
+  gemfile_lock = File.open("Gemfile.lock").path
+  generated_files.to_a << gemfile_lock
   generated_files.each { |file| File.delete(file) }
+  
 end
 
 speeds = {"all" => "full", "most" => "concise"}
