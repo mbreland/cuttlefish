@@ -16,9 +16,7 @@ class Display
   def format_postings
     @results = [] 
     @postings.each do |link|
-      number = link[0].to_s.scan(/\d+/)
-      format_date = number.to_s.to_i < 10 ? link[0].to_s + "&nbsp;" : link[0]
-      @results << " #{format_date} - #{link[1]} - #{link[2]}</br></br>"
+      @results << {"date" => link[0], "link" => link[1], "location" => link[2]}
     end
   end
   
