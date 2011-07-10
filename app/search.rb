@@ -2,6 +2,7 @@ require 'rubygems'
 require 'simple_progressbar'
 require 'open-uri'
 require 'nokogiri'
+require 'erb'
 
 class Search
   attr_accessor :doc

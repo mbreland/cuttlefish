@@ -4,26 +4,16 @@ class Scrape
     raw_pages = scrape_cities_threaded(links)
     postings = get_postings(raw_pages)
     puts "found #{postings.count} postings"
-    Display.new(postings, gig, search)
+    display_in_browser(postings, gig, search)
   end
   
-  #same method as scrape_cities_threaded, except without threading. take approximately 2.5 times slower to complete.
-  #def scrape_cities(links)
-  #  @@big_list_o_jobs = []
-  #  @@links = links
-  #  SimpleProgressbar.new.show("Grabbing page source from #{@@links.length} cities") do
-  #    begin
-  #      @@links.each_with_index do |doc, index| 
-  #        @@big_list_o_jobs << Nokogiri::HTML(open(doc)).at_css("blockquote")
-  #        progress (((index + 1).to_f / @@links.length)*100).to_i
-  #      end
-  #    rescue RuntimeError => e
-  #      log.warn "--RUNTIME ERROR--"
-  #      log.error e
-  #    end
-  #  end
-  #  @@big_list_o_jobs
-  #end
+  def display_in_browser(postings, gig, search)
+    displayClass = Display.new(postings, gig, search)
+    displayClass.format_postings
+    template = File.open("./public/layout.html").read
+    renderer = ERB.new(template)
+    displayClass.to_output_file(renderer.result(displayClass.get_binding))
+  end
   
   def scrape_cities_threaded(links)
     @@threads = []
