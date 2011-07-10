@@ -1,11 +1,7 @@
-#!/usr/bin/env ruby
 require 'rubygems'
 require 'simple_progressbar'
 require 'open-uri'
 require 'nokogiri'
-
-load 'scrape.rb'
-load 'display.rb'
 
 class Search
   attr_accessor :doc
@@ -47,5 +43,3 @@ class Search
     end
   end
 end
-
-Search.new('cpg','rails', 'cl', 'concise')

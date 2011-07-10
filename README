@@ -4,8 +4,5 @@ Written By Tyler Breland.
 
 Usage for linux/os x:
 
-gem install bundler 		#first install bundler if it isn't already,
-cd cuttlefish           #goto the app directory
-chmod -x scrape.rb      #make scrape.rb executable
-./scrape.rb             #run scrape.rb
+
 

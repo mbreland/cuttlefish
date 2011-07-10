@@ -2,7 +2,10 @@ class Display
   attr_accessor :out_file
   
   def initialize(postings, gig, search) 
-    @out_file = Time.now.strftime("scraped #{gig} for #{search} at %I:%M %m:%d:%Y.html").gsub(' ', '_') 
+    @out_file = "./tmp/cuttlefish.html"
+    if File.exists?(@out_file)  
+      File.delete(@out_file)
+    end
     display_in_browser(postings, search)
   end
   
