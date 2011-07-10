@@ -5,10 +5,11 @@ require 'app/display'
 desc "Clear out all files in ./tmp directory and destroy Gemfile.lock"
 task :clean do
   generated_files = FileList['./tmp/*.html']
-  gemfile_lock = File.open("Gemfile.lock").path
-  generated_files.to_a << gemfile_lock
+  if File.exists?("Gemfile.lock")
+    gemfile_lock = File.open("Gemfile.lock").path
+    generated_files.to_a << gemfile_lock
+  end
   generated_files.each { |file| File.delete(file) }
-  
 end
 
 speeds = {"all" => "full", "most" => "concise"}
