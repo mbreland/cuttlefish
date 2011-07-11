@@ -6,7 +6,7 @@ class Scrape < Search
     postings_unsorted = get_postings(raw_pages) 
     postings_unsorted.first
     postings = remove_duplicates(postings_unsorted)
-    puts "found #{postings.count} postings"
+    puts "}-(((*> Found #{postings.count} postings!"
     display_in_browser(postings)
   end
   
@@ -22,7 +22,7 @@ class Scrape < Search
     @@threads = []
     @@pages = []
     @@links = array
-    SimpleProgressbar.new.show("Grabbing page source from #{@@links.length} cities") do 
+    SimpleProgressbar.new.show("}-(((*> Grabbing page source from #{@@links.length} cities") do 
       @@links.each_with_index do |url, index|
         @@threads << Thread.new(url) { |scrape_url|
           begin
@@ -46,7 +46,7 @@ class Scrape < Search
     @@threads = []
     @@pages = []
     @@links = links
-    SimpleProgressbar.new.show("Grabbing page source from #{@@links.length} cities") do    
+    SimpleProgressbar.new.show("}-(((*> Grabbing page source from #{@@links.length} cities") do    
       @@links.each_with_index do |url, index|
         @@threads << Thread.new(url) { |scrape_url|
           begin
@@ -70,7 +70,7 @@ class Scrape < Search
   def get_postings(raw_pages)
     @@the_good_stuff = []
     @@raw_pages = raw_pages
-    SimpleProgressbar.new.show("Extracting and formatting links ...") do    
+    SimpleProgressbar.new.show("}-(((*> Extracting and formatting links ...") do    
       @@raw_pages.each_with_index do |poop, index|
    
         search = poop[3].xpath("//body/blockquote/p")

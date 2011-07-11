@@ -7,9 +7,9 @@ require 'erb'
 class Search
   attr_accessor :doc
   
-  def initialize(gig, search, site, speed, type)
+  def initialize(gig, search, site, speed, category_full)
     @doc = Nokogiri::HTML(open(get_base_url(site)))   
-    $type = type
+    $category_full = category_full
     $gig = gig 
     $search = search
     
@@ -31,7 +31,7 @@ class Search
     @@cities_with_dupes = []
     @@base_url = @base_url
     if speed == "full"
-      SimpleProgressbar.new.show("Grabbing links of cities from geo.craigslist.org") do 
+      SimpleProgressbar.new.show("}-(((*> Grabbing links of cities from geo.craigslist.org") do 
         @@states.each_with_index do |state, index|
           @@threads << Thread.new(state) { |url|
             scrape_url = @@base_url + url.downcase
@@ -45,7 +45,7 @@ class Search
         end
       end
     else
-      SimpleProgressbar.new.show("Grabbing links of cities from geo.craigslist.org") do
+      SimpleProgressbar.new.show("}-(((*> Grabbing links of cities from geo.craigslist.org") do
         @@states.each_with_index do |state, index|
           @@threads << Thread.new(state) { |url|
             scrape_url = @@base_url + state.downcase

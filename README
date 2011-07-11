@@ -4,5 +4,28 @@ Written By Tyler Breland.
 
 Usage for linux/os x:
 
+install bundler: gem install bundler
+install gem dependancies: bundle install
+
+run the application using rake commands
+
+rake cuttlefish
+
+run rake -T to view a complete list of commands
+
+rake all:community   # Searches all cities in the community category.
+rake all:for_sale    # Searches all cities in the for_sale category.
+rake all:gigs        # Searches all cities in the gigs category.
+rake all:housing     # Searches all cities in the housing category.
+rake all:jobs        # Searches all cities in the jobs category.
+rake all:services    # Searches all cities in the services category.
+rake clean           # Clear out all files in ./tmp directory and destroy Gemfile.lock
+rake cuttlefish      # Cuttlefish will hold your hand.
+rake most:community  # Searches major cities in the community category.
+rake most:for_sale   # Searches major cities in the for_sale category.
+rake most:gigs       # Searches major cities in the gigs category.
+rake most:housing    # Searches major cities in the housing category.
+rake most:jobs       # Searches major cities in the jobs category.
+rake most:services   # Searches major cities in the services category.
 
 

@@ -4,7 +4,7 @@ class Display < Search
   def initialize(postings) 
     @out_file = "./tmp/results.html"
     @postings = postings
-    @gig = $type
+    @gig = $category_full
     @query = $search
     if File.exists?(@out_file)  
       File.delete(@out_file)

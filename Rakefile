@@ -17,32 +17,36 @@ types = {"gigs" => "ggg", "jobs" => "jjj", "housing" => "hhh", "for_sale" => "ss
 
 desc "Cuttlefish will hold your hand."
 task :cuttlefish do
-  puts "Choose a category: \n#{types.keys.map { |x| x + " "}}"
+  puts "}-(((*> Choose a category: \n#{types.keys.map { |x| x + " "}}"
   key = STDIN.gets.chomp
+  puts "}-(((*> '#{key}'"
   while !types.key?(key) do
     puts "WRONG. DO IT AGAIN:"
     key = STDIN.gets.chomp
   end
   category = types.fetch(key)
-  puts "Query: "
+  category_full = key
+  puts "}-(((*> Query: "
   query = STDIN.gets.chomp
-  search(category, "concise", query, type)
+  puts "}-(((*> '#{query}'"
+  search(category, "concise", query, category_full)
 end
 
 speeds.each do |key, speed|
   namespace key do
-    types.each do |type, type_short|
-      key == "all" ? (desc "Searches all cities in the #{type} category.") : (desc "Searches major cities in the #{type} category.")
+    types.each do |category_full, type_short|
+      key == "all" ? (desc "Searches all cities in the #{category_full} category.") : (desc "Searches major cities in the #{category_full} category.")
       
-      task type do
-        puts "Query: "
+      task category_full do
+        puts "}-(((*> Query: "
         query = STDIN.gets.chomp
-        search(type_short, speed, query, type)
+        puts "}-(((*> '#{query}'"
+        search(type_short, speed, query, category_full)
       end
     end
   end
 end
 
-def search(type_short, speed, query, type)
-  Search.new(type_short, query, 'cl', speed, type)
+def search(type_short, speed, query, category_full)
+  Search.new(type_short, query, 'cl', speed, category_full)
 end
