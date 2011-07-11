@@ -26,7 +26,7 @@ task :cuttlefish do
   category = types.fetch(key)
   puts "Query: "
   query = STDIN.gets.chomp
-  search(category, "concise", query)
+  search(category, "concise", query, type)
 end
 
 speeds.each do |key, speed|
@@ -37,12 +37,12 @@ speeds.each do |key, speed|
       task type do
         puts "Query: "
         query = STDIN.gets.chomp
-        search(type_short, speed, query)
+        search(type_short, speed, query, type)
       end
     end
   end
 end
 
-def search(type, speed, query)
-  Search.new(type, query, 'cl', speed)
+def search(type_short, speed, query, type)
+  Search.new(type_short, query, 'cl', speed, type)
 end

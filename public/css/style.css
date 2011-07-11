@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    font-size: 12px;
+    background: #fff url(../images/cuttlefish.png) no-repeat center top fixed;
+}
+article {
+    width:980px;
+    margin: 0 auto;
+    padding: 10px;
+    overflow-x: hidden;
+}
+header {
+    height:35px;
+    position:fixed;
+    top:0px;
+    left: 0px;
+    width: 100%;
+    background:#fff url(../images/nav.png) repeat-x center left;background-color: 
+    z-index:999999;
+    box-shadow: 0 0 5px #000;
+}
+header section {
+    width: 980px;
+    height: 29px;
+    padding: 6px 0 0 0;
+    margin: 0 auto;
+}
+header a{
+    font-size:.9em;
+    font-weight:bold;
+    float:left;
+    padding: 2px 4px;
+    color:#999;
+    text-decoration: none;
+    border:1px solid #ccc;
+    cursor: pointer;
+    background:transparent url(../images/overlay.png) repeat-x center left;
+    height:16px;
+    line-height:16px;
+}
+header a:hover{
+    background:#D9D9DA none;
+    color: #fff;
+}
+header a.top span, header a.bottom span{
+    float:left;
+    width:16px;
+    height:16px;
+}
+header a.top span{
+    background:transparent url(../images/top.png) no-repeat center center;
+}
+header a.bottom span{
+    background:transparent url(../images/bottom.png) no-repeat center center;
+}
+
+header ul{
+    height:25px;
+    list-style:none;
+    padding: 0;
+    margin:0 0 0 0;
+    float: right;
+}
+header ul li{
+    display:inline;
+    float:left;
+    margin:0px 2px;
+    font-family: Arial;
+    font-weight: normal;
+}
+header form input{
+    float: right;
+    outline: none;
+    height: 18px;
+    width: 200px;
+    margin: 0 0 0 3px;
+    border:1px solid #ccc;
+}
+span.description {
+    font-size:1.7em;
+    font-weight:normal;
+    float:left;
+    padding: 3px 4px;
+    color:#666;
+    height:16px;
+    line-height:16px;
+    font-family: Rockwell;
+    text-shadow: 1px 1px 0 #fff;
+}
+.shadow {
+    box-shadow: 0 0px 5px #000;
+}
+#content {
+    margin: 35px 0 0 0;
+}
+div.result {
+    padding: 5px;
+    font-size: 1.3em;
+}
+
+div.result div.date {
+    float: left;
+    width: 3.2em;
+    text-align: center;
+}
+div.result span {
+    display:none;
+}
