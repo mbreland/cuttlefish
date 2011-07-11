@@ -4,14 +4,14 @@ Written By Tyler Breland.
 
 Usage for linux/os x:
 
-install bundler: gem install bundler
-install gem dependancies: bundle install
+gem install bundler  #install bundler if it isn't already
+bundle install       #install cuttlefish's gem dependancies
 
-run the application using rake commands
+you can run cuttlefish with rake commands.
 
 rake cuttlefish
 
-run rake -T to view a complete list of commands
+run rake -T to view a complete list of commands:
 
 rake all:community   # Searches all cities in the community category.
 rake all:for_sale    # Searches all cities in the for_sale category.
@@ -27,5 +27,7 @@ rake most:gigs       # Searches major cities in the gigs category.
 rake most:housing    # Searches major cities in the housing category.
 rake most:jobs       # Searches major cities in the jobs category.
 rake most:services   # Searches major cities in the services category.
+
+Thanks! I hope you enjoy it.
 
 
